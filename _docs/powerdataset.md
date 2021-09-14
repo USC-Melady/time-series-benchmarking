@@ -1,6 +1,6 @@
 ---
-title: Customization
-permalink: /docs/customization/
+title: Power Dataset
+permalink: /datasets/power/
 ---
 
 This template uses [bootstrap-sass](https://github.com/twbs/bootstrap-sass) along with [bootwatch themes](https://bootswatch.com/3).

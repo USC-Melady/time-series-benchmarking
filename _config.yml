@@ -1,15 +1,14 @@
 # Site settings
-title: Jekyll Doc Theme
-email: your-email@domain.com
+title: Time Series Benchmark
+email: nhpatel@usc.edu
 description: >
-  Jekyll Template for Project Websites
-  providing documentation and blog post pages.
+  Time Series benchmark datasets and leaderboards.
 lang: en-US
 
-baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
-url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
-git_address: https://github.com/aksakalli/jekyll-doc-theme
-git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+baseurl: '/time-series-benchmarks' # the subpath of your site, e.g. /blog/
+url: https://nikp29.github.io/time-series-benchmarks # the base hostname & protocol for your site
+git_address: https://github.com/nikp29/time-series-benchmarks
+git_edit_address: https://github.com/nikp29/time-series-benchmarks/blob/gh-pages
 
 # theme options from https://bootswatch.com/3/
 # comment out this to use default Bootstrap
@@ -33,21 +32,21 @@ exclude:
   - README.md
 timezone: Europe/Berlin
 defaults:
-- scope:
-    path: _posts
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
+  - scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
+      sectionid: blog
 
-- scope:
-    path: _docs
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
+  - scope:
+      path: _docs
+      type: docs
+    values:
+      layout: docs
+      sectionid: docs
+      seo:
+        type: 'WebPage'
 
 collections:
   docs:

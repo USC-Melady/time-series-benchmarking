@@ -1,0 +1,18 @@
+- title: Datasets
+  url: /datasets/overview/
+  sublinks:
+    - title: Overview
+      url: /datasets/overview/
+    - title: Power Data
+      url: /datasets/power/
+    - title: Financial
+      url: /datasets/financial/
+- title: Leaderboards
+  url: /leaderboards/overview/
+  sublinks:
+    - title: Overview
+      url: /leaderboards/overview/
+    - title: Power Data
+      url: /leaderboards/power/
+    - title: Financial
+      url: /leaderboards/financial/
