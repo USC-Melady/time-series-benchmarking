@@ -7,7 +7,7 @@ lang: en-US
 
 baseurl: '/time-series-benchmarks' # the subpath of your site, e.g. /blog/
 url: https://nikp29.github.io/time-series-benchmarks # the base hostname & protocol for your site
-git_address: https://github.com/nikp29/time-series-benchmarks
+git_address: https://github.com/nikp29/
 git_edit_address: https://github.com/nikp29/time-series-benchmarks/blob/gh-pages
 
 # theme options from https://bootswatch.com/3/
