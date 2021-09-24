@@ -12,7 +12,7 @@ Create a new a theme folder like `_sass/bootwatch/custom` and set your `bootwatc
 bootwatch: custom
 ```
 
-## Classification Performance Leaderboard
+### Classification Performance Leaderboard
 
 |Categories                         |Methods         |Classification uarr (Balanced Acc)|Localization uarr (Balanced Acc)|Detection darr (Macro MAE)|
 |-----------------------------------|----------------|----------------------------------|--------------------------------|--------------------------|
@@ -34,7 +34,7 @@ bootwatch: custom
 |                                   |Vanilla Transformer [53]|0.612+-0.041                      |0.340+-0.090                    |46.824+-0.866             |
 
 
-## Forecasting Performance Leaderboad
+### Forecasting Performance Leaderboad
 
 |Categories                         |Methods         |Point Forecast| | | | | | | | |95% Pred. Interval| | |
 |-----------------------------------|----------------|--------------|------|------|------|------|------|------|-------|-------|------------------|-------|-------|
@@ -62,7 +62,7 @@ bootwatch: custom
 |                                   |Informer [74]   |0.129         |0.11  |0.073 |0.102 |0.086 |0.059 |0.118 |0.101  |0.067  |0.252             |0.215  |0.214  |
 |Other                              |Neural ODE [8]  |0.117         |0.265 |0.151 |0.098 |0.249 |0.128 |0.102 |0.27   |0.137  |0.737             |0.709  |0.801  |
 
-## Synthetic Time-Series Generation Leaderboard
+### Synthetic Time-Series Generation Leaderboard
 
 |Method                             |Autocorrelation |Coress-correlation|Discriminative Score|Hours |
 |-----------------------------------|----------------|------------------|--------------------|------|
