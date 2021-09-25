@@ -3,11 +3,17 @@ title: Power Dataset
 permalink: /datasets/power/
 ---
 
-This template uses [bootstrap-sass](https://github.com/twbs/bootstrap-sass) along with [bootwatch themes](https://bootswatch.com/3).
-You can create your own theme by writing your own `sass` files.
+### Dataloaders ###
+We prepare easy-to-use PyTorch data loaders that handle dataset processing and standardized dataset splits after download from Zenodo. Following is an example in PyTorch showing that a few lines of code are sufficient to prepare and split the dataset.
 
-Create a new a theme folder like `_sass/bootwatch/custom` and set your `bootwatch` variables in `_config.yml` to `custom`:
+```python
+from dataloader import TimeSeriesLoader
 
-```yaml
-bootwatch: custom
+# Download and process data at './dataset/'
+dataset = TimeSeriesLoader(task = "forecasting", root = 'dataset/')
+data = dataset.get_split() 
+
+train_loader = DataLoader(data["train"], batch_size=32, shuffle=True)
+valid_loader = DataLoader(data["valid"], batch_size=32, shuffle=False)
+test_loader = DataLoader(data["test"], batch_size=32, shuffle=False)
 ```
