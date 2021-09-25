@@ -5,7 +5,10 @@ permalink: /leaderboards/overview/
 
 ## How do the leaderboards work
 
-Upload the things and send it to us, we'll do some sexy validation on it and we'll tell you how badly you have failed.
+Upload the things and send it to us: [Work In Progress]
+
+<!-- 
+we'll do some sexy validation on it and we'll tell you how badly you have failed.
 
 When you submit you need to tell us these things
 
@@ -20,4 +23,4 @@ Dont cheat because all my homies hate cheaters
 
 ```yaml
 bootwatch: custom
-```
+``` -->
