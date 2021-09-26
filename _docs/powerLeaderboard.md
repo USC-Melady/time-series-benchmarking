@@ -4,7 +4,7 @@ permalink: /leaderboards/power/
 ---
 ### Classification Performance Benchmark
 
-|Categories                         |Methods         |Classification uarr (Balanced Acc)|Localization uarr (Balanced Acc)|Detection darr (Macro MAE)|
+|Categories                         |Methods         |Classification &#8593; (Balanced Acc)|Localization &#8593; (Balanced Acc)|Detection &#8595; (Macro MAE)|
 |-----------------------------------|----------------|----------------------------------|--------------------------------|--------------------------|
 |Power Domain                       |PMU score [44]  |-                                 |0.266                           |-                         |
 |Traditional Machine Learning Methods|1-NN Euclidean [4,11]|0.537                             |0.402                           |36.465                    |
