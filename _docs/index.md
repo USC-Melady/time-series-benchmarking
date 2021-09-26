@@ -1,9 +1,8 @@
 ---
-title: Overview
+title: Getting Started
 permalink: /datasets/overview/
 redirect_from: /datasets/index.html
 ---
-## Getting Started
 **`Full dataset` in [Zenodo](https://zenodo.org/record/5130612#.YTIiZI5KiUk). `Descriptions` for [Power Data](https://nikp29.github.io/time-series-benchmarks/datasets/power/).**
 
 ### Dataloaders ###
@@ -41,10 +40,10 @@ result_dict = evaluator.eval(input_dict)
 The PSML dataset is published under [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/), meaning everyone can use it for non-commercial research purpose.
 
 ### Suggested Citation ###
-- Please cite the following paper when you use this data hub:  
-`
+Please cite the following paper when you use this data hub:  
+```
 X. Zheng, N. Xu, L. Trinh, D. Wu, T. Huang, S. Sivaranjani, Y. Liu, and L. Xie, "PSML: A Multi-scale Time-series Dataset for Machine Learning in Decarbonized Energy Grids." (2021).
-`
+```
 
 ### Contact ###
 Please contact us if you need further technical support or search for cooperation. Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.\
