@@ -3,69 +3,50 @@ title: Overview
 permalink: /datasets/overview/
 redirect_from: /datasets/index.html
 ---
-**`Full dataset` in [Zenodo](https://zenodo.org/record/5130612#.YTIiZI5KiUk). `Dataloaders` in [Power Data](https://nikp29.github.io/time-series-benchmarks/datasets/power/).**
+## Getting Started
+**`Full dataset` in [Zenodo](https://zenodo.org/record/5130612#.YTIiZI5KiUk). `Descriptions` for [Power Data](https://nikp29.github.io/time-series-benchmarks/datasets/power/).**
 
-### Minute-level Load and Renewable ###
-- File Name
-  - ISO_zone_#.csv: `CAISO_zone_1.csv` contains minute-level load, renewable and weather data from 2018 to 2020 in the zone 1 of CAISO.
-- Field Description
-  - Field `time`: Time of minute resolution.
-  - Field `load_power`: Normalized load power.
-  - Field `wind_power`: Normalized wind turbine power.
-  - Field `solar_power`: Normalized solar PV power.
-  - Field `DHI`: Direct normal irradiance.
-  - Field `DNI`: Diffuse horizontal irradiance.
-  - Field `GHI`: Global horizontal irradiance.
-  - Field `Dew Point`: Dew point in degree Celsius.
-  - Field `Solar Zeinth Angle`: The angle between the sun's rays and the vertical direction in degree.
-  - Field `Wind Speed`: Wind speed (m/s).
-  - Field `Relative Humidity`: Relative humidity (%).
-  - Field `Temperature`: Temperature in degree Celsius.
+### Dataloaders ###
+We prepare easy-to-use PyTorch data loaders that handle dataset processing and standardized dataset splits after download from Zenodo. Following is an example in PyTorch showing that a few lines of code are sufficient to prepare and split the dataset.
 
-### Minute-level PMU Measurements ###
-- File Name
-  - case #: The `case 0` folder contains all data of scenario setting #0.
-    - pf_input_#.txt: Selected load, renewable and solar generation for the simulation.
-    - pf_result_#.csv: Voltage at nodes and power on branches in the transmission system via T+D simualtion.
-- Filed Description
-  - Field `time`: Time of minute resolution.
-  - Field `Vm_###`: Voltage magnitude (p.u.) at the bus ### in the simulated model.
-  - Field `Va_###`: Voltage angle (rad) at the bus ### in the simulated model.
-  - Field `P_#_#_#`: `P_3_4_1` means the active power transferring in the #1 branch from the bus 3 to 4.
-  - Field `Q_#_#_#`: `Q_5_20_1` means the reactive power transferring in the #1 branch from the bus 5 to 20.
+```python
+from dataloader import TimeSeriesLoader
 
-### Millisecond-level PMU Measurements ###
-- File Name
-  - Forced Oscillation: The folder contains all forced oscillation cases.
-    - row_#: The folder contains all data of the disturbance scenario #.
-      - dist.csv: Three-phased voltage at nodes in the distribution system via T+D simualtion.
-      - info.csv: This file contains the start time, end time, location and type of the disturbance.
-      - trans.csv: Voltage at nodes and power on branches in the transmission system via T+D simualtion.
-  - Natural Oscillation: The folder contains all natural oscillation cases.
-    - row_#: The folder contains all data of the disturbance scenario #.
-      - dist.csv: Three-phased voltage at nodes in the distribution system via T+D simualtion.
-      - info.csv: This file contains the start time, end time, location and type of the disturbance.
-      - trans.csv: Voltage at nodes and power on branches in the transmission system via T+D simualtion.
-- Filed Description
-  > trans.csv
-  - Field `Time(s)`: Time of millisecond resolution.
-  - Field `VOLT ###`: Voltage magnitude (p.u.) at the bus ### in the transmission model.
-  - Field `POWR ### TO ### CKT #`: `POWR 151 TO 152 CKT '1 '` means the active power transferring in the #1 branch from the bus 151 to 152.
-  - Field `VARS ### TO ### CKT #`: `VARS 151 TO 152 CKT '1 '` means the reactive power transferring in the #1 branch from the bus 151 to 152.
-  > dist.csv
-  - Field `Time(s)`: Time of millisecond resolution.
-  - Field `####.###.#`: `3005.633.1` means per-unit voltage magnitude of the phase A at the bus 633 of the distribution grid, the one connecting to the bus 3005 in the transmission system.
+# Download and process data at './dataset/'
+dataset = TimeSeriesLoader(task="forecasting", root='dataset/')
+train_loader, test_loader = dataset.load(batch_size=32, shuffle=True)
+```
 
-## License
+### Evaluators ###
+We prepare easy-to-use task-specific evaluators that handle evaluation of models' output. Following is an example in PyTorch showing that a few lines of code are sufficient to get testing results.
+
+```python
+from evaluator import TimeSeriesEvaluator
+
+evaluator  = TimeSeriesEvaluator(task="forecasting", root='dataset/')
+print(evaluator.expected_input_format)
+print(evaluator.expected_output_format)
+
+predictions = # model's output
+input_dict = {
+    'classification': predictions[:, 0],
+    'localization': predictions[:, 1],
+    'detection': predictions[:, 2],
+}
+
+result_dict = evaluator.eval(input_dict)
+```
+
+### License ###
 The PSML dataset is published under [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/), meaning everyone can use it for non-commercial research purpose.
 
-## Suggested Citation
+### Suggested Citation ###
 - Please cite the following paper when you use this data hub:  
 `
 X. Zheng, N. Xu, L. Trinh, D. Wu, T. Huang, S. Sivaranjani, Y. Liu, and L. Xie, "PSML: A Multi-scale Time-series Dataset for Machine Learning in Decarbonized Energy Grids." (2021).
 `
 
-## Contact
+### Contact ###
 Please contact us if you need further technical support or search for cooperation. Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.\
 Email contact: &nbsp; [Le Xie](mailto:le.xie@tamu.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Yan Liu](mailto:yanliu.cs@usc.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Xiangtian Zheng](mailto:zxt0515@tamu.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Nan Xu](mailto:nanx@usc.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Dongqi Wu](mailto:dqwu@tamu.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Loc Trinh](mailto:loctrinh@tamu.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [Tong Huang](mailto:tonghuang@tamu.edu?subject=[GitHub]%20POWERDATASET), &nbsp; [S. Sivaranjani](mailto:sivaranjani@tamu.edu?subject=[GitHub]%20POWERDATASET). 
 
