@@ -1,3 +1,12 @@
+# Time Series Benchmarking Wesbite
+
+This is the USC Melady website for hosting the time series benchmarking project.
+
+
+
+
+
+
 # Jekyll Doc Theme
 
 Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
